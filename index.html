@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Quieres ser mi novia?</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background-color: #ffa1a1;
+            background-image: url('/img/wallp.png'); /* Fondo con flores */
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 50px;
+            border-radius: 15px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            position: relative;
+            animation: pulse 1.5s infinite; /* Animación de pulso para el contenedor */
+        }
+
+        h1 {
+            font-size: 32px;
+            color: #ff4d4d;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px rgba(255, 0, 0, 0.5);
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: space-between; /* Asegura que los botones queden alineados */
+            margin-top: 20px;
+            position: relative;
+        }
+
+        button {
+            padding: 15px 25px;
+            font-size: 18px;
+            border: 2px solid #ff4d4d;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            background-color: white;
+        }
+
+        button:hover {
+            transform: scale(1.1);
+        }
+
+        #yesButton {
+            background-color: #ff66b2;
+            color: white;
+        }
+
+        #yesButton:hover {
+            background-color: #ff4d88;
+        }
+
+        #noButton {
+            background-color: #ff9999;
+            color: white;
+            position: relative; /* Cambiado a 'relative' para que no se mueva fuera de vista */
+            transition: left 0.2s ease, top 0.2s ease; /* Suaviza el movimiento */
+        }
+
+        #noButton:hover {
+            background-color: #ff6666;
+        }
+
+        /* Estilos para las imágenes */
+        .heart-images {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .heart-images img {
+            width: 120px; /* Ajusta el tamaño según sea necesario */
+            height: auto; /* Mantiene la proporción de las imágenes */
+            animation: pulse 1.5s infinite; /* Animación de pulso */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Sombra para dar profundidad */
+            transition: transform 0.3s ease; /* Suaviza el cambio de escala */
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1); /* Aumenta el tamaño */
+            }
+            100% {
+                transform: scale(1); /* Vuelve al tamaño original */
+            }
+        }
+
+        /* Opcional: efecto al pasar el ratón */
+        .heart-images img:hover {
+            transform: scale(1.15); /* Aumenta el tamaño al pasar el ratón */
+        }
+
+        /* Corazones flotando */
+        .heart {
+            position: absolute;
+            font-size: 24px;
+            animation: float 6s infinite;
+            color: #ff4d4d;
+        }
+
+        @keyframes float {
+            0% {
+                opacity: 0;
+                transform: translateY(0) scale(0.5);
+            }
+            50% {
+                opacity: 1;
+                transform: translateY(-200px) scale(1);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-400px) scale(0.5);
+            }
+        }
+
+        .heart:nth-child(1) {
+            left: 10%;
+            animation-duration: 7s;
+        }
+
+        .heart:nth-child(2) {
+            left: 20%;
+            animation-duration: 5s;
+            animation-delay: 1s;
+        }
+
+        .heart:nth-child(3) {
+            left: 70%;
+            animation-duration: 4s;
+            animation-delay: 2s;
+        }
+
+        .heart:nth-child(4) {
+            left: 50%;
+            animation-duration: 6s;
+            animation-delay: 1.5s;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Hola Mapu 🤗</h1>
+        <h1>¿Quieres ser mi novia?</h1>
+
+        <!-- Contenedor para las imágenes sin forma -->
+        <div class="heart-images">
+            <img src="/img/mapupng.png" alt="Foto 1">
+            <img src="/img/yopng.png" alt="Foto 2">
+        </div>
+
+        <div class="buttons">
+            <button id="yesButton">Sí</button>
+            <button id="noButton">No</button>
+        </div>
+    </div>
+
+    <div class="heart">❤️</div>
+    <div class="heart">💓</div>
+    <div class="heart">💞</div>
+    <div class="heart">💕</div>
+
+    <script>
+        // Movimiento del botón "No" por toda la pantalla
+        const noButton = document.getElementById('noButton');
+
+        noButton.addEventListener('mouseover', function () {
+            const containerWidth = window.innerWidth - noButton.offsetWidth;
+            const containerHeight = window.innerHeight - noButton.offsetHeight;
+
+            const newLeft = Math.random() * containerWidth;
+            const newTop = Math.random() * containerHeight;
+
+            noButton.style.position = 'absolute'; // Permite que el botón se mueva libremente
+            noButton.style.left = newLeft + 'px';
+            noButton.style.top = newTop + 'px';
+        });
+
+        // Redirigir a la carta de amor al hacer clic en "Sí"
+        document.getElementById('yesButton').addEventListener('click', function () {
+            window.location.href = 'carta.html';
+        });
+    </script>
+</body>
+</html>

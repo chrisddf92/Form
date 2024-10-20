@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carta de amor</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background-color: #ffccff;
+            background-image: url('https://i.imgur.com/uwGB6sB.png'); /* Fondo con flores */
+            background-size: cover;
+            background-position: center; /* Centra la imagen */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: 20px;
+            color: #9900cc;
+            position: relative; /* Permite que los elementos absolutos se posicionen correctamente */
+            overflow: hidden; /* Evita que los elementos salgan del área visible */
+        }
+
+        .card {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            max-width: 600px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #cc0099;
+            text-shadow: 2px 2px 5px rgba(204, 0, 153, 0.5);
+            /* Animación de palpitación */
+            animation: heartbeat 1.5s infinite;
+        }
+
+        p {
+            font-size: 20px;
+            line-height: 1.6;
+            color: #cc0099;
+        }
+
+        .hearts {
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            font-size: 80px;
+            color: #ff3399;
+            transform: rotate(-15deg);
+        }
+
+        .hearts-left {
+            position: absolute;
+            bottom: -20px;
+            left: -20px;
+            font-size: 80px;
+            color: #ff3399;
+            transform: rotate(15deg);
+        }
+
+        .heart {
+            position: absolute;
+            font-size: 24px;
+            animation: float 6s infinite;
+            color: #ff66b2;
+        }
+
+        /* Animación de flotación de corazones */
+        @keyframes float {
+            0% {
+                opacity: 0;
+                transform: translateY(0) scale(0.5);
+            }
+            50% {
+                opacity: 1;
+                transform: translateY(-200px) scale(1);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-400px) scale(0.5);
+            }
+        }
+
+        /* Animación de palpitación */
+        @keyframes heartbeat {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+        }
+
+        /* Estilo para la imagen con efecto de palpitación */
+        .small-image {
+            width: 100px; /* Ajusta el tamaño según sea necesario */
+            height: auto; /* Mantiene la proporción de la imagen */
+            margin-top: 20px; /* Espacio entre el párrafo y la imagen */
+            border-radius: 10px; /* Bordes redondeados para un toque suave */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra para dar profundidad */
+            /* Animación de palpitación */
+            animation: heartbeat 1.5s infinite;
+        }
+
+        /* Elimina el subrayado del hipervínculo en la imagen */
+        a {
+            text-decoration: none;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="hearts">💖</div>
+        <h1>Querida,</h1>
+        <p>
+            ❤️ Desde que te conocí, el 8 de Julio del 2023 super que eras la persona correcta, tus ojos, tu sonrisa, tu manera de<br>
+            ver el mundo, tus sentimientos y mas que nada tu corazón todo en ti me hace sentir afortunado. Se que estamos a una gran distancia<br>
+            pero soy fiel creyente que el amor no tiene limites, no hay nada que impida sentir ese sentimiento ni la distancia ni<br>
+            ni el tiempo, desde que hablamos he aprendido a quererte a tener mucho cariño hacia ti como ser y como esa persona tan especial con<br>
+            la que siempre pienso y me pregunto como amanecio cada mañana. Espero que podamos construir muchos momentos hermosos juntos, y que esta<br>
+            propuesta sea el inicio de algo maravilloso.<br>
+            ¿Aceptarias compartir esta loca pero muy bonita aventura conmigo? ❤️
+        </p>
+        
+        <!-- Imagen más pequeña con un enlace que redirige a otra página -->
+        <a href="https://youtu.be/OukQDrJ7QRQ?si=3OJjGZnyLRMuPPBw" target="_blank">
+            <img src="/img/canva.png" alt="Imagen romántica" class="small-image">
+        </a>
+
+        <div class="hearts-left">💖</div>
+    </div>
+
+    <div class="heart">❤️</div>
+    <div class="heart">💓</div>
+    <div class="heart">💞</div>
+    <div class="heart">💕</div>
+</body>
+</html>
